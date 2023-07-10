@@ -39,11 +39,11 @@ def element_send_keys(xpath, driver, text):
     element.clear()
     element.send_keys(text)
 
-def login(login, password):
+def login(login, password, driver):
     element_send_keys(xpath="user-name", driver=driver, text=login)
     element_send_keys(xpath="password", driver=driver, text=password)
     element_click(xpath='login-button', driver=driver)
 
 driver = get_driver()
 open_page(driver, URL)
-login(login=LOGIN, password=PASSWORD)
+login(login=LOGIN, password=PASSWORD, driver=driver)
